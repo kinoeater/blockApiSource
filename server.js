@@ -15,7 +15,7 @@ const Port = process.env.PORT;
 
 
 //mongoose.connect('mongodb://localhost:27017/AppDB', {
-  connectDatabase();
+//  connectDatabase();
   
 // middleware
 app.use(express.urlencoded({ extended: true }));
