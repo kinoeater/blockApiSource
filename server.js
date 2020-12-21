@@ -27,4 +27,4 @@ app.use("/",routes);  // directs to "./routes/index"
 
 app.route("/").get((req, res) => res.send({"name": "John", "age": 31, "city": "New York"} ));
 
-app.listen(5000, console.log(`Your app start on port number: ${Port} : ${process.env.NODE_ENV} `));
+app.listen(Port, console.log(`Your app start on port number: ${Port} : ${process.env.NODE_ENV} `));
