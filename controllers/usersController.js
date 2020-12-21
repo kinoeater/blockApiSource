@@ -10,7 +10,7 @@ const getUser = (req,res,next) => {
         res.status(200).json({
             data: result[1],
             username: req.params.username,
-            msg: "get user operation",
+            msg: "get user operation success",
         })
     })    
 }
@@ -31,7 +31,7 @@ const deleteUser = (req,res,next) => {
         (err,result) => {
             if (err) return res.status(500).json({msg: err});
             const msg = {
-                msg: "User Deleted",
+                msg: "User Deleted success",
                 username: req.params.username
             };
             return res.status(200).json(msg);
@@ -66,7 +66,7 @@ const registerUser = (req,res,next) => {
     user
         .save()
         .then(()=> {
-            console.log("user registered");
+            console.log("user registered successfully");
             res.status(200).json("ok");
         })
         .catch((err) => {
@@ -89,7 +89,7 @@ const loginUser = (req,res,next) => {
          })
         res.status(200).json({
             token: token,
-            msg: "success",
+            msg: "successfully logged in",
 
         });
        }

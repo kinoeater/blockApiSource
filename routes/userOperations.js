@@ -6,7 +6,7 @@ const middlewareAuthCheck = require("../middlewareAuthCheck");
 const {getUser,deleteUser,updatePassword, registerUser,loginUser,getAllUsers} = require("../controllers/usersController")
 
 
-const router = express.Router();
+const router = express.Router(); 
 
 
 router.get("/:username",middlewareAuthCheck.checkToken,getUser);

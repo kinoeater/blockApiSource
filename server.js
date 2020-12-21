@@ -3,8 +3,7 @@ const mongoose = require("mongoose")
 const dotenv = require("dotenv");
 // const userRoute = require("./routes/user");
 const routes = require("./routes/index");  // you can also write require("./routes"); because it is the index file already
-
-
+const connectDatabase = require("./helpers/database/connectDatabase");
 
 
 //env variables
@@ -14,18 +13,10 @@ dotenv.config({
 const app = express();
 const Port = process.env.PORT;
 
+
 //mongoose.connect('mongodb://localhost:27017/AppDB', {
-mongoose.connect('mongodb+srv://hayati:tehlike@hayatitehlike.osyob.mongodb.net/AppDB?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('Connected to database.'))
-  .catch(() => {
-    console.log('Cannot connect to database. Exiting.');
-    process.exit()
-  }
-)
+  connectDatabase();
+  
 // middleware
 app.use(express.urlencoded({ extended: true }));
 
