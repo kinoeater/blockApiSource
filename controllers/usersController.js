@@ -67,7 +67,7 @@ const registerUser = (req,res,next) => {
         .save()
         .then(()=> {
             console.log("user registered successfully");
-            res.status(200).json("ok");
+            res.status(200).json("user registered successfully");
         })
         .catch((err) => {
             res.status(403).json({msg: err});
